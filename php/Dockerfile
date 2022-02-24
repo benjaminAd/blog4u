@@ -5,7 +5,9 @@ RUN apk --no-cache update && apk --no-cache add bash git
 
 RUN set -ex \
   && apk --no-cache add \
-    postgresql-dev
+  postgresql-dev
+
+RUN apk add --no-cache --update nodejs npm
 
 RUN docker-php-ext-install pdo pdo_pgsql
 
