@@ -29,4 +29,12 @@ services:
     restart: always
     ports:
       - '8085:8080'
+  
+  maildev:
+    image: maildev/maildev
+    container_name: blog4u_mailer
+    command: bin/maildev --web 80 --smtp 25 --hide-extensions STARTTLS
+    ports:
+      - "8087:80"
+    restart: always
 
